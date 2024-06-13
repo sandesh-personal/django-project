@@ -43,3 +43,14 @@ def using_bootstrap_view(request):
         {"name": "jonny ", "age": 30, "email": "aa@gmail.com", "address": "ktm", "display": True},
     ]
     return render(request, template_name= "myapp/using_bootstrap.html", context= {"students": s})
+
+
+def temp_inherit_view(request):
+    return render(request, template_name="myapp/home.html")
+
+
+def about_us_view(request):
+    return render(request, template_name="myapp/about_us.html")
+
+def contact_us_view(request):
+    return render(request, template_name="myapp/contact_us.html")
