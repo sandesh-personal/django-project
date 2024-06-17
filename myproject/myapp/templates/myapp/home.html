@@ -1,11 +1,47 @@
 {% extends "layouts/base.html" %}
 
-{% block title%}
-Template Inheritance Home Page
+
+{% block title %}
+Temp Inherit Home Page
 {% endblock %}
 
-{% block content%}
+
+{% block content %}
 <div class="container">
-    <h1> This is temp inherited home page </h1>
-    <div>
+    <h1>Classroom</h1>
+    <table class="table table-stripe">
+        <tr>
+            <th>S.N.</th>
+            <th>Name</th>
+            <th>Section</th>
+        </tr>
+        {% for classroom in classrooms %}
+        <tr>
+            <td> {{forloop.counter}} </td>
+            <td>{{classroom.name}}</td>
+            <td>{{classroom.section}}</td>
+        </tr>
+        {% endfor %}
+<div class="container">
+    <h1>Students</h1>
+    <table class="table table-stripe">
+        <tr>
+            <th>S.N.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Address</th>
+        </tr>
+        {% for students in students%}
+        <tr>
+            <td> {{forloop.counter}} </td>
+            <td>{{students.name}}</td>
+            <td>{{students.age}}</td>
+            <td>{{students.email}}</td>
+            <td>{{students.address}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
 {% endblock %}

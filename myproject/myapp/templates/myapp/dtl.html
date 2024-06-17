@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DTL</title>
+    <style>
+        .btn-primary {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .mt-3 {
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 <body>
-    <h1> DTL Page <h1/>
-    <h1> Hello From {{name}} <h1/>
-    <h1> My name is {{student}} <h1/>
+    <h1> DTL Page </h1>
+    <h1> Hello From {{name}} </h1>
+    <h1> My name is {{student}} </h1>
 
     {% for student in students %}
         Name: {{student.name}}
         age: {{student.age}}
         <br><br>
-        {% endfor %} 
+    {% endfor %} 
     {{students.0.name}}
     {{students.1.age}}
 
@@ -22,13 +40,13 @@
         {% if student.display == True %}
             Age: {{student.name}}
             <br>
-            {% elif student.name == "alex" %}
-                alex is funny<br>
-        {%else%}
+        {% elif student.name == "alex" %}
+            alex is funny<br>
+        {% else %}
             No Data 
-        {% endif%}
-        
-    {% endfor%}
+        {% endif %}
+    {% endfor %}
     
+    <a href="{% url 'root_page' %}" class="btn-primary mt-3">Root Page</a>
 </body>
 </html>

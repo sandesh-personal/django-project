@@ -10,3 +10,9 @@ class Student(models.Model):
     age = models.IntegerField()
     email = models.EmailField()
     address = models.CharField(max_length=50)
+    
+class Teachers(models.Model):
+    name = models.CharField(max_length=50)
+    age = models.IntegerField()
+    email = models.EmailField()
+    address = models.CharField(max_length=50)
