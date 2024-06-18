@@ -2,7 +2,7 @@
 URL configuration for myproject project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,23 +14,25 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+# Root URL conf
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
 
 def hello_view(request):
-    return HttpResponse("<h1> This is from homepage </h1>")
-
+    return HttpResponse("<h1>Hello World. I am learning django</h1>")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("crud/", include("crud.urls")),
     path("", include("myapp.urls")),
     path("", hello_view)
-    
 ]
 
 
-# URL chaining
-# it is a way to isolaye urls in a large project
-# it main request always lands in root urls.py.
-# 
+# URL Chaining
+# It is a way to isolate urls in a large project
+# The main request always lands in root urls.py.
+# But the request can be forwarded to individual apps
+# This helps in proper structuring of huge projects
